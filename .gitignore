@@ -1,0 +1,5 @@
+/target
+/.idea
+/tools/data-import/out/cast_clear.csv
+/tools/data-import/out/keywords_clear.csv
+/tools/data-import/out/movies_metadata_clear.csv

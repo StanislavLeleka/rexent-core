@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package favorites;
+
+service FavoritesService {
+    rpc AddLikedMovies(AddLikedMoviesRequest) returns (AddLikedMoviesResponse) {}
+    rpc GetLikedMovies(GetLikedMoviesRequest) returns (GetLikedMoviesResponse) {}
+}
+
+// Request messages
+
+message AddLikedMoviesRequest {
+    string user_id = 1;
+    repeated int32 movie_id = 2;
+}
+
+message GetLikedMoviesRequest {
+    string user_id = 1;
+}
+
+// Response messages
+
+message AddLikedMoviesResponse {}
+
+message GetLikedMoviesResponse {
+    repeated int32 movie_ids = 1;
+}

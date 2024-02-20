@@ -1,0 +1,10 @@
+[env]
+
+REDIS_URL = "redis://:eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81@127.0.0.1:6379/"
+LOCATION_SERVICE_GRPC_URL = "http://localhost:50051"
+
+WEATHERAPI_URL = "http://api.weatherapi.com"
+WEATHERAPI_KEY = "api_key"
+
+JWT_SECRET_KEY = "jwt_secret_key"
+JWT_S2S_SECRET_KEY = "jwt_s2s_secret_key"

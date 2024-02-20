@@ -1,0 +1,30 @@
+[package]
+name = "data-import"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mongodb = "2.5.0"
+log = { version = "0.4.17" }
+env_logger = { version = "0.10.0" }
+serde_json = "1.0"
+csv = "1.2.2"
+serde = { version = "1.0", features = ["derive"] }
+regex = "1.9.1"
+tokio = { version = "1.29.1", features = ["macros", "rt-multi-thread"] }
+http = "0.2.8"
+http-body = "0.4.5"
+md-5 = "0.10.1"
+rand = "0.8.5"
+thiserror = "1.0"
+tokio-stream = "0.1.8"
+tracing = "0.1.37"
+anyhow = "1.0.70"
+pin-project = "1.0.12"
+aws-config = "0.56.0"
+aws-sdk-s3 = "0.29.0"
+hyper = { version = "0.14.24", features = ["client"] }
+hyper-proxy = "0.9.1"
+
+db = { path = "../../lib/db-connector", package = "db-connector" }
+tmdb_client = { path = "../../lib/tmdb-client", package = "tmdb-client" }

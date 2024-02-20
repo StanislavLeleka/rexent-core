@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package events;
+
+service EventsService {
+  rpc GetShowtimes(GetShowtimesRequest) returns (ShowtimesResponse) {}
+}
+
+message Showtime {
+  string day = 1;
+  string date = 2;
+  repeated Theater theaters = 3;
+}
+
+message Theater {
+  string name = 1;
+  string link = 2;
+  string address = 3;
+  repeated Show showing = 4;
+}
+
+message Show {
+  repeated string time = 1;
+  optional string type = 2;
+}
+
+// Request messages
+
+message GetShowtimesRequest {
+  int32 movie_id = 1;
+  string country = 2;
+  string city = 3;
+}
+
+// Response messages
+
+message ShowtimesResponse {
+  repeated Showtime showtimes = 1;
+}

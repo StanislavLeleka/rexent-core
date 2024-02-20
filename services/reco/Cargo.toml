@@ -1,0 +1,33 @@
+[package]
+name = "reco"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+jsonwebtoken = { version = "8.3" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+chrono = { version = "0.4", features = ["serde"] }
+log = { version = "0.4.17" }
+env_logger = { version = "0.10.0" }
+tonic = "0.9.2"
+prost = "0.11.9"
+prost-types = "0.11"
+tokio = { version = "1.28.2", features = ["full"] }
+chrono-tz = "0.8.2"
+mongodb = "2.5.0"
+diesel = { version = "2.1.0", features = [
+    "r2d2",
+    "postgres",
+    "chrono",
+    "uuid",
+    "serde_json",
+] }
+
+proto = { path = "../../service-protos", package = "service-protos" }
+http_client = { path = "../../lib/http-client", package = "http-client" }
+api_error = { path = "../../lib/api-error", package = "api-error" }
+db = { path = "../../lib/db-connector", package = "db-connector" }
+movie = { path = "../../lib/movie-fetcher", package = "movie-fetcher" }
+movie_reco_client = { path = "../../lib/movie-reco-client", package = "movie-reco-client" }
+tmdb_client = { path = "../../lib/tmdb-client", package = "tmdb-client" }

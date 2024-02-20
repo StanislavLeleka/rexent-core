@@ -1,0 +1,6 @@
+[env]
+#db config
+DATABASE_URL = "postgres://postgres:postgres@localhost/users"
+
+#jwt
+JWT_SECRET_KEY = "secret"

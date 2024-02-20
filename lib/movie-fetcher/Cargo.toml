@@ -1,0 +1,16 @@
+[package]
+name = "movie-fetcher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mongodb = "2.5.0"
+log = { version = "0.4.17" }
+env_logger = { version = "0.10.0" }
+tokio = { version = "1.28.1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+
+tmdb_client = { path = "../tmdb-client", package = "tmdb-client" }
+proto = { path = "../../service-protos", package = "service-protos" }
+db = { path = "../db-connector", package = "db-connector" }

@@ -1,0 +1,15 @@
+[env]
+
+#location service
+LOCATION_SERVICE_GRPC_URL = "http://localhost:50051"
+
+#themoviedb
+THEMOVIEDB_API_URL = "https://api.themoviedb.org"
+THEMOVIEDB_API_KEY = "api_key"
+THEMOVIEDB_API_READ_ACCESS_TOKEN = "read_access_token"
+
+#mongo
+MONGO_CONN_STR = "mongodb://user:pass@localhost"
+
+#recommendation service
+MOVIE_RECO_URL = "http://localhost:5001"

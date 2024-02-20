@@ -1,0 +1,16 @@
+[package]
+name = "db-connector"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mongodb = "2.5.0"
+log = { version = "0.4.17" }
+env_logger = { version = "0.10.0" }
+diesel = { version = "2.1.0", features = ["r2d2", "postgres"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+
+[dev-dependencies]
+diesel = { version = "2.1.0", features = ["postgres"] }
+tokio = { version = "1.29.1", features = ["full"] }

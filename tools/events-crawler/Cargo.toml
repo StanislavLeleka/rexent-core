@@ -1,0 +1,18 @@
+[package]
+name = "events-crawler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+log = { version = "0.4.17" }
+env_logger = { version = "0.10.0" }
+serpapi-search-rust = "0.1.0"
+tokio = "1.28.1"
+mongodb = "2.5.0"
+chrono = { version = "0.4", features = ["serde"] }
+
+movie_fetcher = { path = "../../lib/movie-fetcher", package = "movie-fetcher" }
+db = { path = "../../lib/db-connector", package = "db-connector" }
+tmdb_client = { path = "../../lib/tmdb-client", package = "tmdb-client" }

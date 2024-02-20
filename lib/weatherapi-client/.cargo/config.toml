@@ -1,0 +1,4 @@
+[env]
+
+WEATHERAPI_URL = "http://api.weatherapi.com"
+WEATHERAPI_KEY = "YOUR_API_KEY"

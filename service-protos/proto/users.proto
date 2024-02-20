@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package users;
+
+import "google/protobuf/empty.proto";
+
+service UsersService {
+    rpc SignUp(NewUserRequest) returns (TokenResponse) {}
+    rpc SignIn(LoginRequest) returns (TokenResponse) {}
+    rpc GetUser(GetUserRequest) returns (UserResponse) {}
+    rpc LinkSocialAccount(LinkSocialAccountRequest) returns (google.protobuf.Empty) {}
+}
+
+enum SocialType {
+    FACEBOOK = 0;
+    GOOGLE = 1;
+    TWITTER = 2;
+    INSTAGRAM = 3;
+}
+
+// Request messages
+
+message NewUserRequest {
+    string email = 1;
+    string password = 2;
+    string first_name = 3;
+    string last_name = 4;
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message GetUserRequest {
+    string user_id = 1;
+}
+
+message LinkSocialAccountRequest {
+    string user_id = 1;
+    string id = 2;
+    string platform = 3;
+    string account_name = 4;
+    string access_token = 5;
+    string refresh_token = 6;
+    string expires_at = 7;
+}
+
+// Response messages
+
+message TokenResponse {
+    string user_id = 1;
+    string access_token = 2;
+}
+
+message UserResponse {
+    string user_id = 1;
+    string email = 2;
+    string first_name = 3;
+    string last_name = 4;
+}

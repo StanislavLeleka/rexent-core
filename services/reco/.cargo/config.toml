@@ -1,0 +1,16 @@
+[env]
+
+MOVIE_RECO_URL = "http://localhost:5001"
+
+# Threshold values
+TFIDF = "0.04"
+COSINE = "0.1"
+ACCURACY = "0.6"
+
+# grpc services
+FAV_SERVICE_GRPC_URL = "http://localhost:50050"
+CONTEXT_SERVICE_GRPC_URL = "http://localhost:50052"
+
+MONGO_CONN_STR = "mongodb://user:pass@host.docker.internal"
+
+DATABASE_URL = "postgres://postgres:postgres@localhost/reco"

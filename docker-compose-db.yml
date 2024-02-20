@@ -1,0 +1,53 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_HOST: localhost
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_MULTIPLE_DATABASES: locations,users
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    ports:
+      - 5432:5432
+    volumes:
+      - ./config:/docker-entrypoint-initdb.d
+    networks:
+      - neptune-network
+
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    ports:
+      - 27017:27017
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data/db/v6
+
+  cache:
+    image: redis:latest
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - cache:/data
+    networks:
+      - neptune-network
+
+networks:
+  neptune-network:
+    driver: bridge
+
+volumes:
+  cache:
+    driver: local
+  mongodb_data_container:

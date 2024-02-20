@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package search;
+
+import "movie.proto";
+
+service SearchService {
+    rpc SearchMovie(SearchMovieRequest) returns (SearchResultResponse) {}
+}
+
+// Request messages
+
+message SearchMovieRequest {
+    string query = 1;
+    optional int64 page = 2;
+    optional int64 page_size = 3;
+}
+
+// Response messages
+
+message SearchResultResponse {
+    repeated movie.Movie movies = 1;
+}

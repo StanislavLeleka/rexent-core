@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package movie;
+
+message Movie {
+    int32 id = 1;
+    string imdb_id = 2;
+    string original_language = 3;
+    string original_title = 4;
+    string overview = 5;
+    string poster_path = 6;
+    string release_date = 7;
+    string title = 8;
+    float vote_average = 9;
+    repeated Genre genres = 10;
+}
+
+message Genre {
+    int32 id = 1;
+    string name = 2;
+}

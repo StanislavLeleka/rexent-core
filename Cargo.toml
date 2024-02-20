@@ -1,0 +1,25 @@
+[workspace]
+
+members = [
+    "services/users",
+    "services/location",
+    "services/context",
+    "services/gateway",
+    "services/search",
+    "services/reco",
+    "services/events",
+    "service-protos",
+    "lib/api-error",
+    "lib/auth",
+    "lib/http-client",
+    "lib/weatherapi-client",
+    "lib/db-connector",
+    "lib/movie-fetcher",
+    "lib/tmdb-client",
+    "lib/movie-reco-client",
+    "tools/data-import",
+    "tools/events-crawler",
+    "tools/data-seed",
+    "jobs/cron-movie-fetcher",
+    "jobs/cron-showtime-crawler",
+]

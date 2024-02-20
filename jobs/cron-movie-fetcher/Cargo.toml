@@ -1,0 +1,12 @@
+[package]
+name = "cron-movie-fetcher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+log = { version = "0.4.17" }
+env_logger = { version = "0.10.0" }
+tokio = "1.28.1"
+
+movie_fetcher = { path = "../../lib/movie-fetcher", package = "movie-fetcher" }
+movie_reco_client = { path = "../../lib/movie-reco-client", package = "movie-reco-client" }

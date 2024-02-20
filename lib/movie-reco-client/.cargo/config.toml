@@ -1,0 +1,4 @@
+[env]
+
+#recommendation service
+MOVIE_RECO_URL = "http://localhost:5001"

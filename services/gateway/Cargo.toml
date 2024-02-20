@@ -1,0 +1,22 @@
+[package]
+name = "gateway"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = { version = "4.3" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+log = { version = "0.4.17" }
+env_logger = { version = "0.10.0" }
+tonic = "0.9.2"
+prost = "0.11.9"
+prost-types = "0.11"
+tokio = { version = "1.28.2", features = ["full"] }
+chrono-tz = "0.8.2"
+chrono = { version = "0.4", features = ["serde"] }
+
+proto = { path = "../../service-protos", package = "service-protos" }
+api_error = { path = "../../lib/api-error", package = "api-error" }
+auth = { path = "../../lib/auth", package = "auth" }
+crawler = { path = "../../tools/events-crawler", package = "events-crawler" }

@@ -1,0 +1,4 @@
+[env]
+
+USER_SERVICE_GRPC_URL = "http://localhost:50050"
+LOCATION_SERVICE_GRPC_URL = "http://localhost:50051"

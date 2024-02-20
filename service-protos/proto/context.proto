@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package context;
+
+import "location.proto";
+import "google/protobuf/timestamp.proto";
+
+service ContextService {
+    rpc CreateContext(NewContextRequest) returns (ContextResponse) {}
+    rpc GetContext(GetContextRequest) returns (ContextResponse) {}
+}
+
+enum Emotion {
+    Happy = 0;
+    Sad = 1;
+    Excited = 2;
+    Stressed = 3;
+    Relaxed = 4;
+    Anxious = 5;
+    Bored = 6;
+    Energetic = 7;
+}
+
+enum ActivityType {
+    Resting = 0;
+    Walking = 1;
+    Running = 2;
+}
+
+message Mood {
+    Emotion emotion = 1;
+    int32 intensity = 2;
+    optional string comment = 3;
+}
+
+message Activity {
+    ActivityType activity_type = 1;
+    int32 duration = 2;
+    map<string, string> metadata = 3;
+}
+
+message TimeOfDay {
+    google.protobuf.Timestamp time_of_day = 1;
+    string tz = 2;
+}
+
+message Condition {
+    string text = 1;
+    string icon = 2;
+    int32 code = 3;
+}
+
+message Weather {
+    float temp_c = 1;
+    float temp_f = 2;
+    float is_day = 3;
+    Condition condition = 4;
+    float wind_mph = 5;
+    float wind_kph = 6;
+    int32 wind_degree = 7;
+    string wind_dir = 8;
+    int32 humidity = 9;
+    int32 cloud = 10;
+}
+
+message Context {
+    string user_id = 1;
+    location.Location location = 2;
+    Activity activity = 3;
+    TimeOfDay time_of_day = 4;
+    Mood mood = 5;
+    Weather weather = 6;
+    repeated string nearby_friends = 7;
+}
+
+// Request messages
+
+message NewContextRequest {
+    string user_id = 1;
+    Mood mood = 2;
+    string tz = 3;
+}
+
+message GetContextRequest {
+    string user_id = 1;
+}
+
+// Response messages
+
+message ContextResponse {
+    Context context = 1;
+}

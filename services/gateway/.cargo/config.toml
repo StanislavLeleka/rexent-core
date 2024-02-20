@@ -1,0 +1,12 @@
+[env]
+
+#grpc services
+USER_SERVICE_GRPC_URL = "http://localhost:50050"
+LOCATION_SERVICE_GRPC_URL = "http://localhost:50051"
+CONTEXT_SERVICE_GRPC_URL = "http://localhost:50052"
+SEARCH_SERVICE_GRPC_URL = "http://localhost:50053"
+RECO_SERVICE_GRPC_URL = "http://localhost:50054"
+EVENTS_SERVICE_GRPC_URL = "http://localhost:50055"
+
+#jwt
+JWT_SECRET_KEY = "secret"

@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package reco;
+
+import "movie.proto";
+
+service RecoService {
+  rpc GetMovieRecommendations(GetMovieRecommendationsRequest) returns (GetMovieRecommendationsResponse) {}
+  rpc AddUserRecommendationTypes(AddUserRecommendationTypesRequest) returns (AddUserRecommendationTypesResponse) {}
+  rpc GetUserRecommendationTypes(GetUserRecommendationTypesRequest) returns (GetUserRecommendationTypesResponse) {}
+  rpc GetRecommendationTypes(GetRecommendationTypesRequest) returns (GetRecommendationTypesResponse) {}
+}
+
+message RecoType {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+// Request messages
+
+message GetMovieRecommendationsRequest {
+  string user_id = 1;
+  int32 max_recommendations = 2;
+}
+
+message AddUserRecommendationTypesRequest {
+  string user_id = 1;
+  repeated int32 reco_ids = 2;
+}
+
+message GetUserRecommendationTypesRequest {
+  string user_id = 1;
+}
+
+message GetRecommendationTypesRequest {}
+
+// Response messages
+
+message GetMovieRecommendationsResponse {
+  repeated movie.Movie movies = 1;
+}
+
+message AddUserRecommendationTypesResponse {
+  bool success = 1;
+}
+
+message GetUserRecommendationTypesResponse {
+  repeated RecoType reco_types = 1;
+}
+
+message GetRecommendationTypesResponse {
+  repeated RecoType reco_types = 1;
+}

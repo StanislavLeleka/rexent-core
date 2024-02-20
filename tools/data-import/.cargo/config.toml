@@ -1,0 +1,18 @@
+[env]
+
+#aws
+AWS_DEFAULT_REGION = "eu-north-1"
+AWS_ACCESS_KEY_ID = "key-id"
+AWS_SECRET_ACCESS_KEY = "secret-key"
+AWS_QUEUE_URL = "queue-url"
+
+#mongo
+MONGO_CONN_STR = "mongodb://user:pass@localhost"
+
+#settings
+MIN_VOTES_THRESHOLD = "100"
+
+#themoviedb
+THEMOVIEDB_API_URL = "https://api.themoviedb.org"
+THEMOVIEDB_API_KEY = "api-key"
+THEMOVIEDB_API_READ_ACCESS_TOKEN = "read-access-token"

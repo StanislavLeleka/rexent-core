@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package location;
+
+service LocationService {
+    rpc AddLocation(NewLocationRequest) returns (LocationResponse) {}
+    rpc GetLocation(GetLocationRequest) returns (LocationResponse) {}
+    rpc UpdateLocation(UpdateLocationRequest) returns (LocationResponse) {}
+    rpc GetCountriesWithCities(GetCountriesWithCitiesRequest) returns (CountriesResponse) {}
+}
+
+// Request messages
+
+message NewLocationRequest {
+    string user_id = 1;
+    float lat = 2;
+    float lng = 3;
+}
+
+message UpdateLocationRequest {
+    string user_id = 1;
+    float lat = 2;
+    float lng = 3;
+}
+
+message GetLocationRequest {
+    string user_id = 1;
+}
+
+message GetCountriesWithCitiesRequest {}
+
+// Response messages
+
+message Location {
+    float lat = 1;
+    float lng = 2;
+    optional string country_code = 3;
+    optional string country_name = 4;
+    optional string city_name = 5;
+    optional string city_code = 6;
+    optional string formatted_address = 7;
+}
+
+message LocationResponse {
+    Location location = 1;
+    string user_id = 2;
+}
+
+message CityResponse {
+    string city_name = 1;
+    string city_code = 2;
+}
+
+message CountryResponse {
+    string country_code = 1;
+    string country_name = 2;
+    repeated CityResponse cities = 3;
+}
+
+message CountriesResponse {
+    repeated CountryResponse countries = 1;
+}

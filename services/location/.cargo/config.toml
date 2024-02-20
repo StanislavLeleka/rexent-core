@@ -1,0 +1,16 @@
+[env]
+#db config
+DATABASE_URL = "postgres://postgres:postgres@localhost/locations"
+
+#google api
+GOOGLE_API_GEOCODE_URL = "https://maps.googleapis.com/maps/api/geocode/json"
+GOOGLE_API_KEY = "api_key"
+
+#aws
+AWS_DEFAULT_REGION = "eu-north-1"
+AWS_ACCESS_KEY_ID = "key_id"
+AWS_SECRET_ACCESS_KEY = "secret_key"
+AWS_QUEUE_URL = "queue_url"
+
+#jwt
+JWT_SECRET_KEY = "secret_key"

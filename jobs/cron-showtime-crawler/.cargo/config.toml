@@ -1,0 +1,9 @@
+[env]
+#movie provider config
+SERPAPI_API_KEY = "serpapi_api"
+
+#mongo
+MONGO_CONN_STR = "mongodb://user:pass@localhost"
+
+#location service
+LOCATION_SERVICE_GRPC_URL = "http://localhost:50051"
